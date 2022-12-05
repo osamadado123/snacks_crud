@@ -1,0 +1,9 @@
+{% extends 'generic_view.html'%}
+{% block content%}
+<h3>Delete {{snack.title}} ?</h3>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Yes" id='delete_list'/>
+</form>
+{% endblock content %}
