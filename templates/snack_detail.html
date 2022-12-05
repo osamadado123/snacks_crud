@@ -1,0 +1,15 @@
+{% extends 'generic_view.html' %}
+
+{% block content %}
+
+<div>
+ 
+<div>
+    <img src="{{snack.img_url}}" alt="{{snack.title}}" width="200px"/>
+    <div>
+    <h3>{{snack.title}}</h3>
+    <h4>Purchaser: {{snack.purchaser}}</h4>
+    <p>Description: {{snack.description}}</p>
+    </div>
+</div>
+{% endblock content %}

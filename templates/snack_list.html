@@ -1,0 +1,20 @@
+{% extends 'generic_view.html' %}
+
+{% block content %}
+
+<h2>Snacks List: </h2>
+
+{% for snack in object_list %}
+<div style="background-color: #949c9f; padding: .5rem; border-radius: 7px; width: 300px; margin: 2rem; text-align: center; height: 320px;" >
+        <h3>{{snack.title}}</h3>
+        <h3><img src="{{snack.img_url}}" alt="{{snack.title}}" width="200px"/></h3>
+        <a href="{% url 'snack_detail' snack.id%}">Details</a>
+        <a href="{% url 'snack_update' snack.id%}" id="update_list">Update</a>
+        <a href="{% url 'snack_delete' snack.id%}" id="delete_list">Delete</a>
+      </div>
+    
+{% endfor%}
+<div>
+<a href="{% url 'snack_create'%}">Add a new snack to your List</a>
+</div>
+{% endblock content %}
