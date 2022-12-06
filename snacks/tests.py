@@ -46,3 +46,13 @@ class Test(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response,'snack_detail.html')
         self.assertRedirects(response, reverse('snack_detail',args=[2]))
+
+    def test_snack_delete(self):
+        response = self.client.get(reverse("snack_delete", args="1"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_snack_update(self):
+        response = self.client.post(
+            reverse("snack_update", args="1"),
+            {"title": "chocolate","description":"yummy","purchaser":self.user.id}
+        )
